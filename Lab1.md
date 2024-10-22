@@ -2,6 +2,7 @@ Tên: Hán Thị Triểu
 Mã SV: 445101008
 
 1. Phân tích kiến trúc
+Đề xuất kiến trúc MVC cho hệ thống
 - Model:
   + Model sẽ tương tác với cơ sở dữ liệu.
   + Chứa các thành phần quản lý dữ và logic nghiệp vụ.
@@ -12,5 +13,6 @@ Mã SV: 445101008
 - Controller:
   + Các thành phần xử lý tương tác của người dùng để làm việc với Model (cập nhật logic dữ liệu) hoặc/ và với View (cập nhật hiển thị giao diện người dùng).
   + Nhận yêu cầu từ người dùng, gọi Model để xử lý logic nghiệp vụ và sau đó trả kết quả về View để hiển thị cho người dùng.
+  
   
 
