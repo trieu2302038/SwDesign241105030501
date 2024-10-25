@@ -12,7 +12,8 @@ Mã SV: 445101008
 - Controller:
   + Các thành phần xử lý tương tác của người dùng để làm việc với Model (cập nhật logic dữ liệu) hoặc/ và với View (cập nhật hiển thị giao diện người dùng).
   + Nhận yêu cầu từ người dùng, gọi Model để xử lý logic nghiệp vụ và sau đó trả kết quả về View để hiển thị cho người dùng.
-  => Với cách tiếp cận này, MVC đáp ứng tốt yêu cầu bảo mật, tính năng phân chia logic, và khả năng mở rộng của Payroll System, giúp xây dựng hệ thống dễ dàng quản lý và hiệu quả.
+  
+=> Với cách tiếp cận này, MVC đáp ứng tốt yêu cầu bảo mật, tính năng phân chia logic, và khả năng mở rộng của Payroll System, giúp xây dựng hệ thống dễ dàng quản lý và hiệu quả.
 
 1.2 Biểu đồ package mô tả kiến trúc MVC
 
