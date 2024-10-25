@@ -2,6 +2,7 @@ Tên: Hán Thị Triểu
 Mã SV: 445101008
 
 1. Phân tích kiến trúc
+
 1.1 Đề xuất kiến trúc MVC cho hệ thống
 - Model:
   + Model sẽ tương tác với cơ sở dữ liệu.
