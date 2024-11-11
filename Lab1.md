@@ -43,22 +43,30 @@ Mã SV: 445101008
   -> Lý do: Đảm bảo rằng hệ thống cung cấp thông tin cần thiết cho các bên liên quan để quản lý và theo dõi các khoản thanh toán cũng như tình trạng lương của nhân viên.
     
 3. Phân tích ca sử dụng Payment
-Các lớp chính trong ca sử dụng “Payment”
-- Student: Đại diện cho sinh viên thực hiện thanh toán.
-- Registration: Đại diện cho quá trình đăng ký các khóa học của sinh viên trong hệ thống.
-- PaymentProcessor: Xử lý các yêu cầu thanh toán từ sinh viên, bao gồm xác nhận và thực hiện thanh toán.
-- BillingSystem: Giao diện kết nối với hệ thống thanh toán bên ngoài để quản lý các hóa đơn và nhận thông tin thanh toán từ PaymentProcessor.
-- Invoice: Đại diện cho hóa đơn mà sinh viên cần thanh toán.
-- Transaction: Ghi lại thông tin giao dịch khi thanh toán được thực hiện.
-
-![Diagram](https://www.planttext.com/api/plantuml/png/Z991JiCm44NtEOMNxO8BH0WL24YLM5I42pZsABBasCKp1Yh4oLXm9Ax0975CqdPHBopvU_JV-7j-ltysI39Gx6nHA2iHHKrHWoFnMGXULmB7yxOg-IeOroRToGwEf4PQwHIhbO-DXK4L8i1h1AITF7JiirgNuiqRNNnDm6Te3LAGPBpBr30JJz3Anu3mn0MbwFVh-q6uIK0bhOfM4Zm2OCzBxMHYQcKNl0947pALWGwbEWlbd2ZYGXHYFrfCRvETZuucu3eNP_ATiPQ5-e04NSOsetg4pEuF7mJ1INinPUiuOGNPtupdaoSjZPAe8rIS7QkyfqPQeDkXjeem2tIyZ7lDbVKGpyh1Uxq8wkIxN_uplYXtlMpcRDVza2aVzCnxFcV51fpkH_mF003__mC0)
-
+Ca sử dụng "Payment" tập trung vào việc xử lý thanh toán cho nhân viên dựa trên thông tin về thời gian làm việc (đối với nhân viên làm theo giờ) hoặc dựa trên các đơn hàng bán hàng (đối với nhân viên có hoa hồng). Hệ thống sẽ tự động tính toán và tạo thanh toán vào ngày quy định.
+Các lớp phân tích chính trong ca sử dụng “Payment”:
+- Employee: Đại diện cho thông tin của nhân viên.
+- Timecard: Chứa dữ liệu về thời gian làm việc của nhân viên (chỉ - dành cho nhân viên làm theo giờ).
+- SalesReceipt: Chứa dữ liệu về đơn hàng bán hàng của nhân viên (chỉ dành cho nhân viên có hoa hồng).
+- Payroll: Xử lý các chức năng tính toán lương.
+- Payment: Thực hiện chức năng thanh toán, bao gồm các phương thức thanh toán khác nhau.
+- PaymentMethod: Lưu trữ thông tin về phương thức thanh toán mà nhân viên đã chọn (chuyển khoản, nhận trực tiếp, hoặc qua bưu điện).
+- ProjectDatabase: Chứa thông tin về các dự án và mã số thanh toán cho từng dự án (chỉ để tham chiếu, không cập nhật).
+![Diagram](https://www.planttext.com/api/plantuml/png/V5FBJiCm4BpdAwoS0AaLN7igKZXm0A6s4kUjlMei_8ZiDLA4-38EV1A_W9CwIPEqzSNoxEpCsfFy_VokFO6Ze5MMSGNUioTTALiZig-CnRLWc83dWgsOD9HW0neZi2KdpI5X88J3g361EuLTNSrQF2XmTKI53Nk52ULMQ-czj6O3X4Frkvjo9pLoSAAVKXnvHTmIKjhW_Bjr7oX6W_CIt05VWzwZIuLUTWiA_GOvoegkI8EsmT2PiTwWTbQflhM2kfXraoLGZnC9rYuEYWSLgL58ew6Rs_CcJUtKf3bFyadet3uLjWGK9b4nLZdBOuAdzfzMYfdv2r9fXzVNxV5Sli1vSz422QIQsNcaaU38iFyIyuUSBHOilrykx_8X-XKB7lqbsYZAIzIuTP6jM0aN6ITNFlAohctEYum36dJnnNtMOLVasicoDHhH_8N_0000__y30000)
+Giải thích:
+1. Employee là lớp chính liên kết với Timecard và SalesReceipt để ghi nhận thông tin làm việc của nhân viên theo giờ hoặc hưởng hoa hồng.
+2. Payroll thực hiện tính toán lương dựa trên dữ liệu liên kết từ Employee, Timecard, và SalesReceipt.
+3. Payment thực hiện thanh toán dựa trên phương thức thanh toán từ PaymentMethod.
 4. Phân tích ca sử dụng Maintain Timecard
 Các lớp cho ca sử dụng Maintain Timecard
-- Employee: Đại diện cho nhân viên có thời gian làm việc cần được ghi lại.
-- Timecard: Lưu trữ thông tin về thời gian làm việc của nhân viên trong một khoảng thời gian nhất định.
-- TimecardProcessor: Xử lý các thao tác ghi nhận, cập nhật và lưu trữ dữ liệu từ Timecard.
-- PayrollSystem: Giao diện kết nối với hệ thống tính lương để xử lý và lưu thông tin về thời gian làm việc.
-- Project: Thể hiện các dự án mà nhân viên đã dành thời gian làm việc và cần ghi nhận.
+- Employee: Đại diện cho nhân viên thực hiện việc ghi lại thông tin thời gian làm việc (timecard).
+- Timecard: Lớp lưu trữ và quản lý thông tin về số giờ làm việc và ngày làm việc.
+- ProjectManagementDB: Hệ thống cơ sở dữ liệu dự án hiện tại lưu trữ các thông tin về mã số dự án (charge number) để tính phí cho các giờ làm việc.
+- TimecardRepository: Cơ chế lưu trữ và truy xuất dữ liệu Timecard từ cơ sở dữ liệu.
 
-![Diagram](https://www.planttext.com/api/plantuml/png/T99D2i8m44RtFSKiTU45kd9HGJSYABYEoL2hIQTCKg689tFXaRo23KtgJp2BGBw1Ds-IFE-FkNM2NMjqbaajh8M5QJHrY73De5ypm12iYXosZgkw38LQ6FoA0Df62OUxog0Kh2RJ72vKgUmMuR4ombq84lYHMhPxuZEg70fg3nf3nNVeetuFJHabiVBeiU6lpN-J3PD4Qub7fIOcFquGA__7suYEIUjjPnsQDt184zpWlVI3Jk8zvADO2cSweNIVdlwSt5p8r-dhz9Igh0FdqtwEjV9Vu0K00F__0m00)
+![Diagram](https://www.planttext.com/api/plantuml/png/b5FDJeD04Bxp51jED2alq8DfAXvCh35j4yzJ6065NTmPQeZnoJpuIBw2IzcbW7YGP9FDVFFjzyqFtvzVQsBGN9U5vyK548cRiYfKWoZUFM6-KA0Dt4PY9VQiSvbQH4A9qrW5JOcIjyYPIgPWzrIB7vfgGXMYX5ooEOUyn1Xq4YJ0k1IPgZKzAls2oLB46UWKx-loY7hXVJZJ3z1eLHJxXXZBthdXmn6e5OhirI9qJZH1Yw6rK6aL8v5piCFN6ec3ImkMuX-cj7h6cBSW8SMsw6ZJMnjIo7YuoubT1pjQXAONHOjjeRBsJb3ahVxrW1tyeUvg67PZL6quBC80JuK2dh4tFyJnFlnItM6bA6UbcrwVBJGgLmY24_OJTpacnSKMDYz5TY7QD6vBWnat2oTWNFNR78PNaorP2PzG6Zkwcx9WvNlZb3DfPeg6waP1jbT2TirwopcRU-PmgSoFDRPCt-k3mun1wrgBvc94SkbxtjhORV_K7m000F__0m00)
+Giải thích: 
+1. Employee gửi yêu cầu ghi nhận thông tin timecard.
+2. PayrollSystem nhận yêu cầu và xác thực mã số dự án qua ProjectManagementDB.
+3. Nếu mã số dự án hợp lệ, PayrollSystem tạo một bản ghi Timecard và lưu trữ thông qua TimecardRepository.
+4. TimecardRepository đảm bảo bản ghi được lưu trữ an toàn trong cơ sở dữ liệu của hệ thống.
