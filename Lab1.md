@@ -55,9 +55,9 @@ Các lớp phân tích chính trong ca sử dụng “Payment”:
 - ProjectDatabase: Chứa thông tin về các dự án và mã số thanh toán cho từng dự án (chỉ để tham chiếu, không cập nhật).
 ![Diagram](https://www.planttext.com/api/plantuml/png/V5FBJiCm4BpdAwoS0AaLN7igKZXm0A6s4kUjlMei_8ZiDLA4-38EV1A_W9CwIPEqzSNoxEpCsfFy_VokFO6Ze5MMSGNUioTTALiZig-CnRLWc83dWgsOD9HW0neZi2KdpI5X88J3g361EuLTNSrQF2XmTKI53Nk52ULMQ-czj6O3X4Frkvjo9pLoSAAVKXnvHTmIKjhW_Bjr7oX6W_CIt05VWzwZIuLUTWiA_GOvoegkI8EsmT2PiTwWTbQflhM2kfXraoLGZnC9rYuEYWSLgL58ew6Rs_CcJUtKf3bFyadet3uLjWGK9b4nLZdBOuAdzfzMYfdv2r9fXzVNxV5Sli1vSz422QIQsNcaaU38iFyIyuUSBHOilrykx_8X-XKB7lqbsYZAIzIuTP6jM0aN6ITNFlAohctEYum36dJnnNtMOLVasicoDHhH_8N_0000__y30000)
 Giải thích:
-1. Employee là lớp chính liên kết với Timecard và SalesReceipt để ghi nhận thông tin làm việc của nhân viên theo giờ hoặc hưởng hoa hồng.
-2. Payroll thực hiện tính toán lương dựa trên dữ liệu liên kết từ Employee, Timecard, và SalesReceipt.
-3. Payment thực hiện thanh toán dựa trên phương thức thanh toán từ PaymentMethod.
+   1. Employee là lớp chính liên kết với Timecard và SalesReceipt để ghi nhận thông tin làm việc của nhân viên theo giờ hoặc hưởng hoa hồng.
+   2. Payroll thực hiện tính toán lương dựa trên dữ liệu liên kết từ Employee, Timecard, và SalesReceipt.
+   3. Payment thực hiện thanh toán dựa trên phương thức thanh toán từ PaymentMethod.
 4. Phân tích ca sử dụng Maintain Timecard
 Các lớp cho ca sử dụng Maintain Timecard
 - Employee: Đại diện cho nhân viên thực hiện việc ghi lại thông tin thời gian làm việc (timecard).
