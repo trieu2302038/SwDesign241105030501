@@ -32,12 +32,13 @@ Mã SV: 445101008
   + Đảm bảo rằng chỉ những nhân viên đã thanh toán học phí hoặc các khoản chi phí (nếu có) mới có thể thực hiện các giao dịch tiếp theo hoặc yêu cầu thanh toán.
   + Sau khi nhân viên thanh toán, hệ thống sẽ gửi hóa đơn điện tử đã thanh toán cho nhân viên qua email hoặc phương thức liên lạc đã đăng ký.
   -> Lý do: Đảm bảo rằng hệ thống thanh toán hoạt động tự động và chỉ thanh toán cho những nhân viên có đủ điều kiện, đồng thời cung cấp bằng chứng thanh toán cho nhân viên để duy trì tính minh bạch.
+
 - Cơ chế thông báo:
   + Thông báo tình trạng thanh toán: Nếu giao dịch thanh toán không thành công (ví dụ: tài khoản ngân hàng không hợp lệ), hệ thống sẽ gửi thông báo ngay cho nhân viên và yêu cầu họ cập nhật lại thông tin thanh toán.
   + Thông báo về tình trạng lương: Hệ thống sẽ thông báo về các thay đổi trong lương (ví dụ: tăng lương, hoa hồng mới, v.v.) để nhân viên nắm bắt kịp thời.
   + Thông báo khi thanh toán thành công: Sau khi thanh toán thành công, hệ thống sẽ gửi thông báo xác nhận cho nhân viên về việc họ đã nhận được thanh toán và gửi bản sao hóa đơn điện tử.
   -> Lý do: Đảm bảo rằng nhân viên luôn nhận được thông tin kịp thời về tình trạng thanh toán và các thay đổi liên quan đến lương của họ. Điều này giúp duy trì sự minh bạch và giảm thiểu các tranh chấp về thanh toán.
-  - Cơ chế báo cáo và theo dõi
+- Cơ chế báo cáo và theo dõi
   + Hệ thống sẽ cung cấp các báo cáo tự động về tình trạng thanh toán, lương của nhân viên, tổng số giờ làm việc và các khoản hoa hồng.
   + Báo cáo sẽ được gửi tự động cho quản trị viên và nhân viên khi có sự thay đổi hoặc vào các thời điểm nhất định (ví dụ: vào cuối mỗi tuần hoặc cuối tháng).
   -> Lý do: Đảm bảo rằng hệ thống cung cấp thông tin cần thiết cho các bên liên quan để quản lý và theo dõi các khoản thanh toán cũng như tình trạng lương của nhân viên.
