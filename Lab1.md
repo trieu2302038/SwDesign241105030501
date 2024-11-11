@@ -59,6 +59,7 @@ Giải thích:
    2. Payroll thực hiện tính toán lương dựa trên dữ liệu liên kết từ Employee, Timecard, và SalesReceipt.
    3. Payment thực hiện thanh toán dựa trên phương thức thanh toán từ PaymentMethod.
 4. Phân tích ca sử dụng Maintain Timecard
+
 Các lớp cho ca sử dụng Maintain Timecard
 - Employee: Đại diện cho nhân viên thực hiện việc ghi lại thông tin thời gian làm việc (timecard).
 - Timecard: Lớp lưu trữ và quản lý thông tin về số giờ làm việc và ngày làm việc.
