@@ -1,3 +1,4 @@
+
 Họ và tên: Hán Thị Triểu
 MSV: 4451051008
 Tiêu đề: Lap 2
@@ -68,10 +69,13 @@ Các lớp phân tích chính bao gồm:
 Biểu đồ Sequence
 - PayrollSystem truy vấn thông tin từ ProjectManagementDB khi cần tính toán thanh toán.
 - ProjectManagementDB gửi thông tin dự án cho PayrollSystem.
+
 II. Viết code Java mô phỏng ca sử dụng Maintain Timecard.
+
 import java.util.*;
 
 // Lớp đại diện cho nhân viên
+
 class Employee {
     private int employeeId;
     private String name;
@@ -91,6 +95,7 @@ class Employee {
 }
 
 // Lớp đại diện cho thông tin Timecard
+
 class Timecard {
     private Date date;
     private double hoursWorked;
@@ -116,6 +121,7 @@ class Timecard {
 }
 
 // Lớp đại diện cho cơ sở dữ liệu dự án hiện tại (ProjectManagementDB)
+
 class ProjectManagementDB {
     private static Set<String> validChargeNumbers = new HashSet<>(Arrays.asList("PROJ001", "PROJ002", "PROJ003"));
 
@@ -125,6 +131,7 @@ class ProjectManagementDB {
 }
 
 // Lớp đại diện cho kho lưu trữ và truy xuất Timecard
+
 class TimecardRepository {
     private List<Timecard> timecards = new ArrayList<>();
 
@@ -139,6 +146,7 @@ class TimecardRepository {
 }
 
 // Lớp đại diện cho hệ thống PayrollSystem xử lý yêu cầu từ Employee
+
 class PayrollSystem {
     private TimecardRepository timecardRepository = new TimecardRepository();
 
@@ -167,6 +175,7 @@ class PayrollSystem {
 }
 
 // Lớp chính để chạy chương trình mô phỏng ca sử dụng Maintain Timecard
+
 public class Main {
     public static void main(String[] args) {
         // Tạo một nhân viên
