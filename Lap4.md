@@ -21,9 +21,34 @@ Generate Payments: Tạo các khoản thanh toán, tích hợp với hệ thốn
 Kết nối: Process Payroll tích hợp với hệ thống thanh toán và đảm bảo nhân viên nhận được lương chính xác.
 3. Generate Reports
 ![Diagram](s://www.planttext.com/api/plantuml/png/V95D2i8m44RtESNGVQyW5H5TYjQwbA4Tf9YVaaoH8fxCXKVo2ZQbqOgrMINVl1aUa-VzaJX6oxMI0dCs5fQgagOX0dH0gkhJ3JRMI3alLAbz1Vr524ivepv92i2kSKmAhWBQKplAqH54Az9aaGcsL1dBBl8ZzejZoFlukoahwG9hKri71sFFL8GkN-Zo4JurZDBB3E7sEO9cc2ENHaDQAXhYeI1kGhGRW3YUZSd-He7y24uptckQUAjq-_vdaf0k_0U-0000__y30000)
-
+Mô tả: Chức năng này cho phép nhân viên và quản trị viên xem báo cáo chi tiết liên quan đến công việc và lương.
+Lý do thiết kế:
+Actor:
+Employee: Xem báo cáo về số giờ làm việc, tổng lương, và thời gian nghỉ phép.
+Payroll Admin: Xem báo cáo tổng quan để quản lý và tối ưu hiệu suất làm việc.
+Use Cases:
+View Hours Worked: Báo cáo số giờ đã làm việc theo từng dự án.
+View Total Pay: Tổng lương nhận được trong khoảng thời gian xác định.
+View Vacation Time: Thời gian nghỉ phép còn lại.
+Kết nối: Generate Reports cung cấp dữ liệu minh bạch, hỗ trợ nhân viên và quản trị viên theo dõi thông tin quan trọng.
 4. Manage Employee Information
 ![Diagram](s://www.planttext.com/api/plantuml/png/T95D2i8m44RtESNGVQyWBUh2XI18rp8qOn7oKvBfeeWdS-6Hl8AD9QNMDAimttl95_9-lWhFwBZJIc3Dri49UsULAgM-6K0F63P2EAePJQCe0kVUCscu2nXMvwb6Jv0TqM13iDUjiZqH7CpLPk6OQdiPinZzUgMKanJvOPQ6grOYhrmoPcblHufcNbJ6yQGyXFY-6V9yawZzDudSlEugjAYtoYqw5MHa-A8F0000__y30000)
-
+Mô tả: Chức năng này hỗ trợ quản trị viên quản lý thông tin của nhân viên, bao gồm thêm mới, cập nhật hoặc xóa thông tin.
+Lý do thiết kế:
+Actor: Payroll Admin là người duy nhất có quyền chỉnh sửa thông tin nhân viên.
+Use Cases:
+Add Employee: Thêm nhân viên mới vào hệ thống.
+Update Employee Info: Cập nhật thông tin khi có thay đổi (ví dụ: địa chỉ, loại hình công việc).
+Delete Employee: Xóa nhân viên khỏi hệ thống khi không còn làm việc.
+Kết nối: Chức năng này giúp duy trì cơ sở dữ liệu nhân viên chính xác, hỗ trợ cho việc tính lương và báo cáo.
 5. Select Payment Method
 ![Diagram](s://www.planttext.com/api/plantuml/png/T9512eCm44NtESNGlLSeWdOf2D9r2N6emSI4P5n8wScww95wXIRLK6mrco5_tf_yCA_7C_V47OrQCIx8E3Xfgyo42Dm3QikOGq5yk2g4ca_EADLCdb33ZK4ueqV1FSAXGHN0o6WS22gaphI7EELSNERcqblxYiwOK4iPtu4IhV6IaczM5t7JLt6feEXGzCaJbO-moTTIzADDx7nZTyR2Lo7BZlzXVuL4hQFjKTymUyGI8SUXZKju0m00__y30000)
+Mô tả: Chức năng này cho phép nhân viên chọn phương thức thanh toán phù hợp nhất với họ.
+Lý do thiết kế:
+Actor: Employee tự chọn cách nhận lương, đảm bảo tính cá nhân hóa.
+Use Cases:
+Choose Direct Deposit: Chuyển khoản trực tiếp vào tài khoản ngân hàng.
+Choose Mail Check: Gửi phiếu chi qua đường bưu điện.
+Choose Pickup: Nhận phiếu chi trực tiếp tại văn phòng.
+Kết nối: Select Payment Method tạo sự linh hoạt và hài lòng cho nhân viên khi nhận lương.
+
